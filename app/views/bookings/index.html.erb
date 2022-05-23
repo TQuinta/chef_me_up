@@ -1,12 +1,27 @@
-<h1>All your bookings</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div class="bookings-title">
+        <h1>All your bookings</h1>
+      </div>
+      <% @bookings.each do |booking| %>
+      <div class="booking-notification">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="booking-notification-infos">
+          <div>
+            <h2> <%= booking.chef_profile.title %> </h2>
+            <p><%= booking.chef_profile.description %></p>
+            <p>Booked by: <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
+          </div>
+          <div>
+            <p>Status: <strong><%= booking.status.upcase %></strong></p>
+            <p>Booked for: <strong><%= booking.date %></strong></p>
+            <p>Days requested: <strong><%= booking.duration %></strong></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
 
-<% @bookings.each do |booking| %>
-<div class="booking-notification">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="booking-notification-infos">
-    <h2> <%= booking.chef_profile.title %> </h2>
-    <p><%= booking.chef_profile.description %></p>
-    <p>Booked by: <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
+    </div>
   </div>
 </div>
-<% end %>
