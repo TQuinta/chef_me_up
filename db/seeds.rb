@@ -13,7 +13,7 @@ ChefProfile.destroy_all
 User.destroy_all
 
 puts "creating users"
-20.times do
+30.times do
   user = User.new(
     email: Faker::Internet.email,
     password: '123456',
@@ -29,7 +29,7 @@ puts "users created"
 
 puts "creating chef profiles"
 
-5.times do
+15.times do
   user = User.all.sample
   chef = ChefProfile.new(
     title: user.first_name,
@@ -45,7 +45,7 @@ puts "chef profiles created"
 
 puts "creating bookings"
 
-5.times do
+15.times do
   user = User.all.sample
   chef = ChefProfile.all.sample
   booking = Booking.new(
