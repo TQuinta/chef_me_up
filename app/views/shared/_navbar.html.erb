@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <%= image_tag "chefcolor.png", alt: "Le Wagon", width: 200 %> ChefMeUp
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,23 +15,24 @@
   </div>
 </form>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sign-Up</a>
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/101748011?v=4" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-      </ul>
+      <% if user_signed_in? %>
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/101748011?v=4" />
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Chef you up",  new_chef_profile_path, class: "dropdown-item"%>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+          </div>
+      <% else %>
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/users/sign_in">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/sign_up">Sign-Up</a>
+            </li>
+        <ul>
+            <!--li class="nav-item"-->
+            <!--/li-->
+      <% end %>
     </div>
   </div>
 </div>

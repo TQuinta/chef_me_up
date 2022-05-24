@@ -1,5 +1,25 @@
-<h1>PLACEHOLDER</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div class="profile-page">
+        <h1>Chef <%= @profile.title %></h1>
+        <div class="category">
+          <p><%= @profile.category %> Cuisine</p>
+        </div>
+        <img src="https://media.istockphoto.com/photos/chef-presenting-a-plate-of-food-picture-id1369920192" alt="">
+        <div class="text-box">
+          <p><%= @profile.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Make a new booking</h1>
+</div>
 
-<p>Title: <%= @profile.title %></p>
-<p>Description: <%= @profile.description %>
-<p>Category: <%= @profile.category %></p>
+<div>
+  <%= simple_form_for [@profile, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :duration %>
+  <%= f.button :submit %>
+  <% end %>
+</div>
