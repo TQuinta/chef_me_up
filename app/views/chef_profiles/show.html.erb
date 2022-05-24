@@ -13,4 +13,13 @@
       </div>
     </div>
   </div>
+  <h1>Make a new booking</h1>
+</div>
+
+<div>
+  <%= simple_form_for [@profile, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :duration %>
+  <%= f.button :submit %>
+  <% end %>
 </div>

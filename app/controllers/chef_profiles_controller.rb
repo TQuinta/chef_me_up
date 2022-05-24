@@ -8,6 +8,7 @@ class ChefProfilesController < ApplicationController
 
   def show
     authorize @profile
+    @booking = Booking.new
   end
 
   def new
@@ -33,4 +34,7 @@ class ChefProfilesController < ApplicationController
   def set_profile
     @profile = ChefProfile.find(params[:id])
   end
+
+
+
 end
