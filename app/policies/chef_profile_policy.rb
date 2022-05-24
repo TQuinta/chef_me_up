@@ -6,10 +6,9 @@ class ChefProfilePolicy < ApplicationPolicy
       # For a multi-tenant SaaS app, you may want to use:
       # scope.where(user: user)
     end
+  end
 
-    def show?
-      return true
-    end
-
+  def show?
+    return true
   end
 end
