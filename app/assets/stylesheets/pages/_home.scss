@@ -7,9 +7,6 @@
   height: 100%;
   border-radius: 16px;
   transition: all 0.4s;
-  &:hover {
-    color: #00cc99;
-  }
 }
 
 
@@ -40,7 +37,7 @@
   a {
     text-decoration:  none;
     transition: all 0.4s;
-    color: #00cc99;
+    color: black;
     &:hover {
       color: #00cc99;
     }
