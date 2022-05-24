@@ -3,10 +3,12 @@ class ChefProfilesController < ApplicationController
   before_action :set_profile, only: [:show]
 
   def index
-    @profiles = ChefProfile.all
+    @profiles = policy_scope(ChefProfile).order(created_at: :desc)
   end
 
-  def show; end
+  def show
+    authorize @profile
+  end
 
   def new
     @profile = ChefProfile.new
