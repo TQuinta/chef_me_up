@@ -1,5 +1,5 @@
 class ChefProfilesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_profile, only: [:show]
 
   def index
@@ -13,10 +13,12 @@ class ChefProfilesController < ApplicationController
 
   def new
     @profile = ChefProfile.new
+    authorize @profile
   end
 
   def create
     @profile = ChefProfile.new(profile_params)
+    authorize @profile
     @profile.user = current_user
     if @profile.save!
       redirect_to chef_profile_path(@profile)

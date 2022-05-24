@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     profile = ChefProfile.find(params[:chef_profile_id])
     @booking.user = current_user
     @booking.chef_profile = profile
