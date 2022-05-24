@@ -1,8 +1,12 @@
 class ChefProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_profile, only: [:show]
+
   def index
     @profiles = ChefProfile.all
   end
+
+  def show; end
 
   def new
     @profile = ChefProfile.new
@@ -22,5 +26,9 @@ class ChefProfilesController < ApplicationController
 
   def profile_params
     params.require(:chef_profile).permit(:title, :description, :category)
+  end
+
+  def set_profile
+    @profile = ChefProfile.find(params[:id])
   end
 end
