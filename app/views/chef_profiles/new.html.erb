@@ -1,7 +1,11 @@
-<h1>Create your chef profile</h1>
-<%= simple_form_for(@profile) do |f| %>
+<div class="create">
+
+<h1>New Chef Profile</h1>
+  <h2>Create your own chef profile!</h2>
+  <%= simple_form_for(@profile) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :category %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %> 
+<% end %>
+</div>
