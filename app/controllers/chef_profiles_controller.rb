@@ -33,4 +33,7 @@ class ChefProfilesController < ApplicationController
   def set_profile
     @profile = ChefProfile.find(params[:id])
   end
+
+
+
 end
