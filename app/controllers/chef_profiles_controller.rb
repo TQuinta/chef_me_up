@@ -6,7 +6,9 @@ class ChefProfilesController < ApplicationController
     @profiles = ChefProfile.all
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def new
     @profile = ChefProfile.new
