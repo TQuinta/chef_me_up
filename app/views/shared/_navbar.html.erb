@@ -18,7 +18,7 @@
       <% if user_signed_in? %>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/101748011?v=4" />
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
+            <%= link_to "Chef you up",  new_chef_profile_path, class: "dropdown-item"%>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
           </div>
       <% else %>
