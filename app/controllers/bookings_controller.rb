@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     profile = ChefProfile.find(params[:chef_profile_id])
     @booking.user = current_user
     @booking.chef_profile = profile
+    #@booking.total_price = chef_profile.price * booking.duration
     if @booking.save!
       redirect_to bookings_path
     else
@@ -44,6 +45,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :duration, :status)
+    params.require(:booking).permit(:date, :duration, :status, :total_price)
   end
 end
