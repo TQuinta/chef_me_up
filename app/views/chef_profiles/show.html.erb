@@ -6,7 +6,11 @@
         <div class="category">
           <p><%= @profile.category %> Cuisine</p>
         </div>
-        <%= image_tag @profile.meal_picture_url%>
+        <% if @profile.meal_picture_url %>
+          <%= image_tag @profile.meal_picture_url%>
+        <% else %>
+          <%= cl_image_tag @profile.photo.key, crop: :fill %>
+        <% end %>
         <div class="text-box">
           <p><%= @profile.description %></p>
         </div>
