@@ -3,6 +3,11 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
+  def my_bookings
+    @my_bookings = Booking.where(chef_profile: current_user.chef_profile)
+    authorize @my_bookings
+  end
+
   def new
     @booking = Booking.new
   end
@@ -18,6 +23,22 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def accept
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = "accepted"
+    @booking.save
+    authorize @booking
+    redirect_to my_bookings_path
+  end
+
+  def reject
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = "rejected"
+    @booking.save
+    authorize @booking
+    redirect_to my_bookings_path
   end
 
   private

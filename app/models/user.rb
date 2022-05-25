@@ -5,4 +5,9 @@ class User < ApplicationRecord
   has_many :chef_profiles
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_one :chef_profile
+
+  def has_chef_profile?
+    self.chef_profile
+  end
 end
