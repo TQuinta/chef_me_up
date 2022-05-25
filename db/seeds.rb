@@ -37,6 +37,8 @@ puts "creating chef profiles"
     category: Faker::Food.ethnic_category,
     user: user
   )
+  meal_picture_url = "https://source.unsplash.com/random/300×300/?#{chef.category.downcase.gsub(/\s+/, '')}"
+  chef.meal_picture_url = meal_picture_url
   chef.save!
   puts "Created #{chef.title}"
 end

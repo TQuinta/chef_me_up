@@ -6,7 +6,7 @@
         <div class="category">
           <p><%= @profile.category %> Cuisine</p>
         </div>
-        <img src="https://media.istockphoto.com/photos/chef-presenting-a-plate-of-food-picture-id1369920192" alt="">
+        <%= image_tag @profile.meal_picture_url%>
         <div class="text-box">
           <p><%= @profile.description %></p>
         </div>
