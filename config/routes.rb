@@ -8,11 +8,3 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index]
 end
-# to create a page where a user can fill a request
-# it will be dynamic (based on chef profile id)
-# i need to make a form (already: price per day, reserve button)
-# needs backend to calc days * price/day & display
-# user to fill in: start & end date, people number)
-# do i need a new router?
-
-# class text box (Tommy has done)
