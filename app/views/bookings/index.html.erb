@@ -21,7 +21,7 @@
               <p>Status: <strong><%= booking.status.upcase %></strong></p>
               <p>Booked for: <strong><%= booking.date %></strong></p>
               <p>Days requested: <strong><%= booking.duration %></strong></p>
-              <p>Total price: <strong><%= booking.price %></strong></p>
+              <p>Total price: <strong><%= (booking.chef_profile.price * booking.duration).round(2) %></strong></p>
             </div>
           </div>
         </div>
