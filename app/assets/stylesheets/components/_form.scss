@@ -8,8 +8,9 @@
   font-size: 20px;
   margin: 0px;
   padding: 16px;
-  color: white;
   font-weight: 100;
+  color: white;
+  font-weight: bold;
 }
 
 .form-box {
@@ -20,6 +21,7 @@
   margin: 8px;
   .form-label {
     margin-left: 10px;
+    color: white;
   }
 }
 .form-select {
@@ -34,4 +36,12 @@
 .col-sm-6 {
   margin-top: 12px;
   margin-bottom: 10px;
+}
+.submitbtn {
+  margin-bottom: 14px;
+  margin-left: 17px;
+  margin-top: 10px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  color: #00cc99;
 }
