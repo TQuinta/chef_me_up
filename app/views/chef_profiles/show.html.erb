@@ -34,7 +34,7 @@
           <!-- <%= f.input :date %> -->
           <%= f.input :date, collection: (Date.today+1)..(Date.today+90) %>
           <%= f.input :duration%>
-          <%= f.button :submit %>
+          <%= f.button :submit, class: "submitbtn" %>
           <% end %>
         </div>
       </div>
