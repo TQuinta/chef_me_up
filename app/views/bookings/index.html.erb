@@ -9,7 +9,7 @@
           <% if booking.chef_profile.meal_picture_url %>
             <%= image_tag booking.chef_profile.meal_picture_url%>
           <% else %>
-            <%= cl_image_tag booking.chef_profile.photo.key, crop: fill %>
+            <%= cl_image_tag booking.chef_profile.photo.key, crop: :fill %>
           <% end %>
           <div class="booking-notification-infos">
             <div class="booking-notification-left">
