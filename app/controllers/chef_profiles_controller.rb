@@ -30,13 +30,10 @@ class ChefProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:chef_profile).permit(:title, :description, :category)
+    params.require(:chef_profile).permit(:title, :description, :category, :photo)
   end
 
   def set_profile
     @profile = ChefProfile.find(params[:id])
   end
-
-
-
 end
