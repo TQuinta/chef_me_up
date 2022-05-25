@@ -7,9 +7,13 @@
       <% @my_bookings.each do |booking| %>
         <% if booking.status == "pending" %>
           <div class="booking-notification">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <% if booking.chef_profile.meal_picture_url %>
+              <%= image_tag booking.chef_profile.meal_picture_url%>
+            <% else %>
+              <%= cl_image_tag booking.chef_profile.photo.key, crop: fill %>
+            <% end %>
             <div class="booking-notification-infos">
-                <div>
+                <div class="booking-notification-left">
                 <h2> <%= booking.chef_profile.title %> </h2>
                 <p><%= booking.chef_profile.description %></p>
                 <p>Booked by: <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
@@ -28,9 +32,13 @@
     <% @my_bookings.each do |booking| %>
         <% if booking.status != "pending" %>
           <div class="booking-notification">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+             <% if booking.chef_profile.meal_picture_url %>
+              <%= image_tag booking.chef_profile.meal_picture_url%>
+            <% else %>
+              <%= cl_image_tag booking.chef_profile.photo.key, crop: fill %>
+            <% end %>
             <div class="booking-notification-infos">
-                <div>
+                <div class="booking-notification-left">
                 <h2> <%= booking.chef_profile.title %> </h2>
                 <p><%= booking.chef_profile.description %></p>
                 <p>Booked by: <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
