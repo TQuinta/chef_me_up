@@ -4,7 +4,11 @@
        <div class="card-chef">
 
          <%# <img src="https://static.stacker.com/s3fs-public/styles/sar_screen_maximum_large/s3/croppedshutterstock1659067060GE9Zjpg_28.JPEG" /> %>
+        <% if profile.meal_picture_url %>
           <%= image_tag profile.meal_picture_url%>
+        <% else %>
+          <%= cl_image_tag profile.photo.key, crop: :fill %>
+        <% end %>
          <div class="card-chef-infos">
             <div>
               <h2><%= link_to profile.title, chef_profile_path(profile) %></h2>
