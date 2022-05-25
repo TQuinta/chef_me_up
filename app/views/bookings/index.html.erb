@@ -6,9 +6,9 @@
       </div>
       <% @bookings.each do |booking| %>
       <div class="booking-notification">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= image_tag booking.chef_profile.meal_picture_url%>
         <div class="booking-notification-infos">
-          <div>
+          <div class="booking-notification-left">
             <h2> <%= booking.chef_profile.title %> </h2>
             <p><%= booking.chef_profile.description %></p>
             <p>Booked by: <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
