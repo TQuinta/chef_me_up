@@ -6,7 +6,7 @@
       </div>
       <% @bookings.each do |booking| %>
         <div class="booking-notification">
-          <% if @profile.meal_picture_url %>
+          <% if booking.chef_profile.meal_picture_url %>
             <%= image_tag booking.chef_profile.meal_picture_url%>
           <% else %>
             <%= cl_image_tag @profile.photo.key, crop: fill %>
