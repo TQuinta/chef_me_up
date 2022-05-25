@@ -7,4 +7,11 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index]
+  get 'mybookings', to: "bookings#my_bookings", as: :my_bookings
+
+  resources :bookings, only: :show do
+    patch 'accept', to: "bookings#accept"
+    patch 'reject', to: "bookings#reject"
+  end
+
 end

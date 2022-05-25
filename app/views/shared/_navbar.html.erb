@@ -18,12 +18,15 @@
       <% if user_signed_in? %>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/101748011?v=4" />
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "My bookings",  bookings_path, class: "dropdown-item"%>
             <% if current_user.chef_profiles.exists? %>
               <%= link_to "Manage Chef Profile", chef_profiles_path, class: "dropdown-item"%>
+              <%= link_to "My chef service requests",  my_bookings_path, class: "dropdown-item"%>
             <% else %>
               <%= link_to "Chef you up",  new_chef_profile_path, class: "dropdown-item"%>
             <% end %>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
+
           </div>
       <% else %>
         <ul class="navbar-nav me-auto">
