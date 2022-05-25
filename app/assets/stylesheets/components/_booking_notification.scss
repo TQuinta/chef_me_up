@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   border-radius: 16px;
+  margin-bottom: 16px;
 
   img {
     height: 100%;
@@ -42,4 +43,12 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.booking-notification-left {
+  width: 75%;
+  p {
+    text-align: justify;
+    padding-right: 16px;
+  }
 }
