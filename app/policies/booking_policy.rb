@@ -8,4 +8,8 @@ class BookingPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def my_bookings?
+    true
+  end
 end

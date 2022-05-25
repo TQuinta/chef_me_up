@@ -3,6 +3,11 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
+  def my_bookings
+    @my_bookings = Booking.where(chef_profile: current_user.chef_profile)
+    authorize @my_bookings
+  end
+
   def new
     @booking = Booking.new
   end
@@ -14,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.chef_profile = profile
     if @booking.save!
-      redirect_to bookings_path(@booking)
+      redirect_to bookings_path
     else
       render :new
     end

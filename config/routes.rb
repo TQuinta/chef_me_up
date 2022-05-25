@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index]
+  get 'mybookings', to: "bookings#my_bookings", as: :my_bookings
 end
-# to create a page where a user can fill a request
+# to create a page wre a user can fill a request
 # it will be dynamic (based on chef profile id)
 # i need to make a form (already: price per day, reserve button)
 # needs backend to calc days * price/day & display
