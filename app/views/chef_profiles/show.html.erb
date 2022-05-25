@@ -16,11 +16,20 @@
   <h1>Make a new booking</h1>
 </div>
 
-<div>
-  <%= simple_form_for [@profile, @booking] do |f| %>
-  <!-- <%= f.input :date %> -->
-  <%= f.input :date, collection: (Date.today+1)..(Date.today+90) %>
-  <%= f.input :duration %>
-  <%= f.button :submit %>
-  <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <div class="form-box">
+        <div class="small-form">
+        <h2>Make a new booking</h2>
+          <%= simple_form_for [@profile, @booking] do |f| %>
+          <!-- <%= f.input :date %> -->
+          <%= f.input :date, collection: (Date.today+1)..(Date.today+90) %>
+          <%= f.input :duration %>
+          <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
