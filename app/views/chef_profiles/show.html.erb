@@ -6,13 +6,18 @@
         <div class="category">
           <p><%= @profile.category %> Cuisine</p>
         </div>
+
         <% if @profile.meal_picture_url %>
           <%= image_tag @profile.meal_picture_url%>
         <% else %>
           <%= cl_image_tag @profile.photo.key, crop: :fill %>
         <% end %>
+
         <div class="text-box">
-          <p><%= @profile.description %></p>
+          <ul>
+            <li><b>Description: </b><%= @profile.description %></li>
+            <li><b>Price per day: </b><%= @profile.price %> euros</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -28,7 +33,7 @@
           <%= simple_form_for [@profile, @booking] do |f| %>
           <!-- <%= f.input :date %> -->
           <%= f.input :date, collection: (Date.today+1)..(Date.today+90) %>
-          <%= f.input :duration %>
+          <%= f.input :duration%>
           <%= f.button :submit %>
           <% end %>
         </div>
