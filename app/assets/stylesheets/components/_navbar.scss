@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   border-bottom: 1px solid #edebeb;
-  padding:10px;
+  padding:17px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,12 +13,14 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-  margin-left: 25px;
+  margin-left: 80px;
+  margin-left: 123px;
 }
 .navbar-light .navbar-brand {
   font-weight: bold;
   color: #00cc99;
   transition: all 0.5s;
+  font-size: 22px;
   &:hover {
     color:#00af83;
   }
@@ -31,4 +33,9 @@
 }
 .dropdown-menu.show {
   margin-right: 8px;
+}
+.navbar-light .navbar-nav .nav-link {
+  margin-right: 93px;
+  margin-left: -55px;
+  font-size: 18px;
 }

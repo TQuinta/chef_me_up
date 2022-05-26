@@ -8,6 +8,7 @@
   border-radius: 16px;
   text-decoration: none;
   color:black;
+  z-index: -1;
   a {
     text-decoration:  none;
     transition: all 0.4s;
@@ -37,9 +38,6 @@
   transition: all 0.6s;
 }
 
-.card-chef:hover {
-
-}
 
 .card-chef .card-chef-infos {
   padding: 16px;
