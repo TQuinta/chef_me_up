@@ -20,12 +20,12 @@
             <% if user.avatar.attached? %>
              <%= cl_image_tag user.avatar.key, crop: :fill, class: "card-trip-user avatar-bordered" %>
             <% elsif user.avatar_url %>
-              <%= image_tag user.avatar_url, crop: :fill, class: "card-trip-user avatar-bordered"%>
+             <%= image_tag user.avatar_url, crop: :fill, class: "card-trip-user avatar-bordered" %>
             <% else %>
-             <%= image_tag "chefcolor.png",  class: "card-trip-user avatar-bordered" %>
+              <%= image_tag "chefcolor.png",  class: "card-trip-user avatar-bordered" %>
             <% end %>
-            <%# <img src="https://avatars.githubusercontent.com/u/101748011?v=4" class="card-trip-user avatar-bordered" /> %>
           </div>
+          <%# <img src="https://avatars.githubusercontent.com/u/101748011?v=4" class="card-trip-user avatar-bordered" /> %>
         </div>
       <% end %>
     <% end %>
