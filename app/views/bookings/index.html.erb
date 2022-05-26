@@ -15,13 +15,12 @@
             <div class="booking-notification-left">
               <h2> <%= booking.chef_profile.title %> </h2>
               <p><%= booking.chef_profile.description %></p>
-              <p>Booked by: <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
             </div>
             <div>
               <p>Status: <strong><%= booking.status.upcase %></strong></p>
               <p>Booked for: <strong><%= booking.date %></strong></p>
               <p>Days requested: <strong><%= booking.duration %></strong></p>
-              <p>Total price: <strong><%= (booking.chef_profile.price * booking.duration).round(2) %></strong></p>
+              <p>Total price: <strong><%= booking.total_price %></strong></p>
             </div>
           </div>
         </div>

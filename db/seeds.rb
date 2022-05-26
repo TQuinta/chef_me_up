@@ -36,7 +36,7 @@ puts "creating chef profiles"
     description: Faker::Food.description,
     category: Faker::Food.ethnic_category,
     user: user,
-    price: Faker::Number.between(from: 20.0, to: 150.0).round(1)
+    price: Faker::Number.between(from: 10.0, to: 20.0).round(2)
   )
   meal_picture_url = "https://source.unsplash.com/random/300×300/?#{chef.category.downcase.gsub(/\s+/, '')} food"
   chef.meal_picture_url = meal_picture_url
