@@ -3,7 +3,11 @@ class ChefProfilesController < ApplicationController
   before_action :set_profile, only: [:show]
 
   def index
-    @profiles = policy_scope(ChefProfile).order(created_at: :desc)
+    if params[:query].present?
+      @profiles = policy_scope(ChefProfile).search_by_title_and_description_and_category(params[:query])
+    else
+      @profiles = policy_scope(ChefProfile).order(created_at: :desc)
+    end
   end
 
   def show
