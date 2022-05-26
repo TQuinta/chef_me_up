@@ -6,6 +6,16 @@
   width: 100%;
   height: 100%;
   border-radius: 16px;
+  text-decoration: none;
+  color:black;
+  a {
+    text-decoration:  none;
+    transition: all 0.4s;
+    color: black;
+    &:hover {
+      color: #00cc99;
+    }
+  }
 }
 
 
@@ -27,20 +37,16 @@
   transition: all 0.6s;
 }
 
+.card-chef:hover {
+
+}
 
 .card-chef .card-chef-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  a {
-    text-decoration:  none;
-    transition: all 0.4s;
-    color: black;
-    &:hover {
-      color: #00cc99;
-    }
-  }
+  position: relative;
 }
 
 .card-chef-infos .card-chef-user {

@@ -1,26 +1,25 @@
 <div class="container">
   <div class="cards">
     <% @profiles.each do |profile| %>
-       <div class="card-chef">
-
-         <%# <img src="https://static.stacker.com/s3fs-public/styles/sar_screen_maximum_large/s3/croppedshutterstock1659067060GE9Zjpg_28.JPEG" /> %>
-        <% if profile.meal_picture_url %>
-          <%= image_tag profile.meal_picture_url%>
-        <% else %>
-          <%= cl_image_tag profile.photo.key, crop: :fill %>
-        <% end %>
-         <div class="card-chef-infos">
-            <div>
-              <h2><%= link_to profile.title, chef_profile_path(profile) %></h2>
-              <p><%= profile.description %></p>
+      <%= link_to chef_profile_path(profile), class:"card-chef" do %>
+        <div class="card-chef">
+          <%# <img src="https://static.stacker.com/s3fs-public/styles/sar_screen_maximum_large/s3/croppedshutterstock1659067060GE9Zjpg_28.JPEG" /> %>
+            <% if profile.meal_picture_url %>
+              <%= image_tag profile.meal_picture_url%>
+            <% else %>
+              <%= cl_image_tag profile.photo.key, crop: :fill %>
+            <% end %>
+            <div class="card-chef-infos">
+              <div>
+                <h2><%= profile.title %></h2>
+                <p><%= profile.description %></p>
+              </div>
+              <h2 class="card-chef-pricing"><%= profile.category %></h2>
+              <%= image_tag profile.user.avatar_url,  class: "card-trip-user avatar-bordered" %>
+              <%# <img src="https://avatars.githubusercontent.com/u/101748011?v=4" class="card-trip-user avatar-bordered" /> %>
             </div>
-            <h2 class="card-chef-pricing"><%= profile.category %></h2>
-           <%= image_tag profile.user.avatar_url,  class: "card-trip-user avatar-bordered" %>
-            <%# <img src="https://avatars.githubusercontent.com/u/101748011?v=4" class="card-trip-user avatar-bordered" /> %>
-          </div>
-
-      </div>
-
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
