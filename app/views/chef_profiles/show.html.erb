@@ -3,6 +3,14 @@
     <h1><%= @profile.title %></h1>
     <div class="category">
       <p><%= @profile.category %></p>
+      <% user =  User.find(@profile.user_id)%>
+       <% if  user.avatar_url %>
+        <%= image_tag user.avatar_url, crop: :fill, id:"avatar" %>
+       <% elsif  user.avatar.attached? %>
+        <%= cl_image_tag user.avatar.key, crop: :fill, id: "avatar" %>
+       <% else %>
+        <%= image_tag "chefcolor.png", id: "avatar" %>
+       <% end %>
     </div>
     <div class="flex">
       <% if @profile.meal_picture_url %>
@@ -23,16 +31,18 @@
             <% end %>
           </div>
         </div>
+        <div class="text-box-price">
+          <strong><%= @profile.price %></strong> €/day
+        </div>
       </div>
+
       <% end %>
     </div>
     <div class="text-box">
       <ul>
-        <li><%= @profile.description %></li>
+        <li id="chef-title">Chef's description </li>
+          <li><%= @profile.description %></li>
       </ul>
-    </div>
-    <div class="text-box-price">
-        <%= @profile.price %> €/day
     </div>
   </div>
 </div>
