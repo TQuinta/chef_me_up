@@ -15,7 +15,7 @@
               <p><%= profile.description %></p>
             </div>
             <h2 class="card-chef-pricing"><%= profile.category %></h2>
-           <%= image_tag "avatarairbnb.jpg",  class: "card-trip-user avatar-bordered" %>
+           <%= image_tag profile.user.avatar_url,  class: "card-trip-user avatar-bordered" %>
             <%# <img src="https://avatars.githubusercontent.com/u/101748011?v=4" class="card-trip-user avatar-bordered" /> %>
           </div>
 
