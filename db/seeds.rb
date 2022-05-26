@@ -63,7 +63,6 @@ puts "creating bookings"
 end
 
 puts "bookings created"
-=======
 # Categories for chefs - ChefMyHome, ChefMyExperience, ChefToGo
 
 user = User.new(
