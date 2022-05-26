@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_05_25_134642) do
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
-    t.integer "duration"
+    t.date "duration"
     t.string "status", default: "pending"
     t.bigint "user_id", null: false
     t.bigint "chef_profile_id", null: false

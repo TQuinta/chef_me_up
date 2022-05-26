@@ -1,5 +1,6 @@
 class ChefProfile < ApplicationRecord
   belongs_to :user
+  has_many :bookings
   has_one_attached :photo
   include PgSearch::Model
 
@@ -8,4 +9,8 @@ class ChefProfile < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
+  def available?(from, to)
+    bookings.where('date <= ? AND duration >= ?', to, from).none?
+  end
 end

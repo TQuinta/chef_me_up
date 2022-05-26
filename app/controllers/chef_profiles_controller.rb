@@ -8,6 +8,7 @@ class ChefProfilesController < ApplicationController
     else
       @profiles = policy_scope(ChefProfile).order(created_at: :desc)
     end
+    @profiles = @profiles.select { |profile| profile.available?(params[:date], params[:duration]) }
   end
 
   def show
