@@ -12,14 +12,15 @@
           <div class="card-chef-infos">
             <div>
               <h2><%= profile.title %></h2>
-              <p><%= profile.description %></p>
             </div>
-            <h2 class="card-chef-pricing"><%= profile.category %></h2>
+            <div class="card-chef-pricing">
+              <p>$<strong><%= profile.price %></strong> per day</p>
+            </div>
             <% user = User.find(profile.user_id)%>
             <% if user.avatar.attached? %>
-              <%= cl_image_tag user.avatar.key, crop: :fill, class: "card-trip-user avatar-bordered" %>
+             <%= cl_image_tag user.avatar.key, crop: :fill, class: "card-trip-user avatar-bordered" %>
             <% elsif user.avatar_url %>
-              <%= image_tag user.avatar_url, crop: :fill, class: "card-trip-user avatar-bordered" %>
+             <%= image_tag user.avatar_url, crop: :fill, class: "card-trip-user avatar-bordered" %>
             <% else %>
               <%= image_tag "chefcolor.png",  class: "card-trip-user avatar-bordered" %>
             <% end %>
