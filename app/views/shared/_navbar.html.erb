@@ -17,9 +17,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <% if user_signed_in? %>
         <% if current_user.avatar.attached? %>
-          <%= cl_image_tag current_user.avatar.key, crop: :fill, id: "navbarDropdown", class: "avatar dropdown-toggle", data_bs_toggle: "dropdown", aria_haspopup: true, aria_expanded: false%>
+          <%= cl_image_tag current_user.avatar.key, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars.githubusercontent.com/u/101748011?v=4" />
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png" />
         <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "My bookings",  bookings_path, class: "dropdown-item"%>
