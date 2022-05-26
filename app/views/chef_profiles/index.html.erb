@@ -15,7 +15,14 @@
               <p><%= profile.description %></p>
             </div>
             <h2 class="card-chef-pricing"><%= profile.category %></h2>
-           <%= image_tag profile.user.avatar_url,  class: "card-trip-user avatar-bordered" %>
+
+            <% user = User.find(profile.user_id)%>
+            <% if user.avatar.attached? %>
+             <%= cl_image_tag user.avatar.key, crop: :fill, class: "card-trip-user avatar-bordered" %>
+            <% else %>
+              <%= image_tag "chefcolor.png",  class: "card-trip-user avatar-bordered" %>
+            <% end %>
+
             <%# <img src="https://avatars.githubusercontent.com/u/101748011?v=4" class="card-trip-user avatar-bordered" /> %>
           </div>
 
