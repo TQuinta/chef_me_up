@@ -21,3 +21,5 @@ const initFlatpickr = () => {
 }
 
 export { initFlatpickr };
+
+//if this dtepicker exists then do the following
