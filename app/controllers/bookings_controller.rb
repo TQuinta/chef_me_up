@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     profile = ChefProfile.find(params[:chef_profile_id])
     @booking.user = current_user
     @booking.chef_profile = profile
-    @booking.total_price = profile.price * @booking.duration
+    @booking.total_price = (@booking.duration - @booking.date) * profile.price
     if @booking.save!
       redirect_to bookings_path
     else

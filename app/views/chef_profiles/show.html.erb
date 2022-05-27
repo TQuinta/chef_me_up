@@ -35,9 +35,13 @@
           <div class="small-form">
           <h2>Make a new booking</h2>
             <%= simple_form_for [@profile, @booking] do |f| %>
-            <!-- <%= f.input :date %> -->
-            <%= f.input :date, collection: (Date.today+1)..(Date.today+90) %>
-            <%= f.input :duration, :collection => 1..30, :hint => 'ex. 2 days' %>
+            <!--<%= f.input :date, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 5,
+                              order: [:day, :month, :year] %> -->
+            <!-- <%= f.date_field :date %> -->
+            <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, :label => 'Start date' %>
+            <%= f.input :duration, as: :string, required: false, input_html: {class: "datepicker"}, :label => 'End date' %>
+            <!--<%= f.input :duration, :collection => 1..30, :hint => 'ex. 2 days' %> -->
             <%= f.button :submit, class: "submitbtn" %>
             <% end %>
           </div>
