@@ -12,57 +12,6 @@ Booking.destroy_all
 ChefProfile.destroy_all
 User.destroy_all
 
-puts "creating users"
-30.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: '123456',
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    address: Faker::Address.street_name
-  )
-  user.save!
-  puts "Created #{user.first_name}"
-end
-
-puts "users created"
-
-puts "creating chef profiles"
-
-15.times do
-  user = User.all.sample
-  chef = ChefProfile.new(
-    title: user.first_name,
-    description: Faker::Food.description,
-    category: Faker::Food.ethnic_category,
-    user: user,
-    price: Faker::Number.between(from: 10.0, to: 20.0).round(2)
-  )
-  meal_picture_url = "https://source.unsplash.com/random/300×300/?#{chef.category.downcase.gsub(/\s+/, '')} food"
-  chef.meal_picture_url = meal_picture_url
-  chef.save!
-  puts "Created #{chef.title}"
-end
-
-puts "chef profiles created"
-
-puts "creating bookings"
-
-15.times do
-  user = User.all.sample
-  chef = ChefProfile.all.sample
-  booking = Booking.new(
-    date: DateTime.now,
-    duration: DateTime.now + rand(1..5).days,
-    status: %w[pending rejected confirmed].sample,
-    user: user,
-    chef_profile: chef
-  )
-  booking.save!
-  puts "Created booking for #{booking.user.first_name}"
-end
-
-puts "bookings created"
 # Categories for chefs - ChefMyHome, ChefMyExperience, ChefToGo
 
 user = User.new(
