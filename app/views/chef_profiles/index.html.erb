@@ -1,13 +1,17 @@
 <div class="container">
-  <div>
-    <%= form_tag chef_profiles_path, method: :get do %>
-      <%= text_field_tag :date,
-        params[:date],
-        class: "form-control-2",
-        id: "range_start",
-        placeholder: "Pick dates"
-      %>
-      <%= submit_tag "Search", class: "btn btn-success" %>
+  <div class="date-form">
+    <%= form_tag chef_profiles_path, class: "form", method: :get do %>
+      <div>
+        <%= text_field_tag :date,
+          params[:date],
+          class: "form-control-2",
+          id: "range_start",
+          placeholder: "Pick dates"
+        %>
+      </div>
+      <div>
+        <%= submit_tag "Search", class: "btn btn-success", id: "dates" %>
+      </div>
     <% end %>
   </div>
 

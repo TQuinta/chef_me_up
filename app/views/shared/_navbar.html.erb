@@ -13,7 +13,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a chef"
+        placeholder: "Find a chef or category"
       %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
@@ -35,7 +35,6 @@
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "My bookings",  bookings_path, class: "dropdown-item"%>
             <% if current_user.chef_profiles.exists? %>
-              <%= link_to "Manage Chef Profile", chef_profiles_path, class: "dropdown-item"%>
               <%= link_to "My chef service requests",  my_bookings_path, class: "dropdown-item"%>
             <% else %>
               <%= link_to "Chef you up",  new_chef_profile_path, class: "dropdown-item"%>
