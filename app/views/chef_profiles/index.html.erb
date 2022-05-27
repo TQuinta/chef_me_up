@@ -30,4 +30,7 @@
       <% end %>
     <% end %>
   </div>
+  <% if @profiles.empty? %>
+    <h1 id="no-chef"><%= "No chef for you :(" %></h1>
+  <% end %>
 </div>
