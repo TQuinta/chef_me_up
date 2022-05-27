@@ -16,9 +16,12 @@
 .form-box {
   background-color: rgba($color: #00cc99, $alpha: 0.6);
   border-radius: 16px;
-  padding: 0px;
+  padding: 15px;
   box-shadow: 1px 1px 8px rgba($color: #000000, $alpha: 0.3);
-  margin: 8px;
+  margin: 15px;
+  margin-top: 0px;
+  margin-left: 25px;
+  width: 100%;
   .form-label {
     margin-left: 10px;
     color: white;
