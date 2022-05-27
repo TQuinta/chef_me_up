@@ -8,4 +8,14 @@ class ChefProfile < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
+  def message
+    if self.category == "ChefMyHome"
+      "Our chef will provide you with all you need, cooking you breakfast, lunch, and dinner at your house"
+    elsif self.category == "ChefToGo"
+      "Home cooked pre-prepared meals for those on the go!"
+    else
+      "Events, parties, or just because you want to. Our chefs will provide you with your perfect experience"
+    end
+  end
 end
