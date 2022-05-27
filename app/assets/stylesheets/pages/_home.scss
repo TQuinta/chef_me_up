@@ -1,14 +1,33 @@
 // Specific CSS for your home-page
-.btn btn-sucess {
-position: absolute;
-top: 8px;
-bottom: 8px;
-right: 8px;
-font-size: 15px;
-padding:0px;
-color: #00cc99;
-transition: all 0.5s;
-&:hover {
-  color:#00af83;
-}
+#dates {
+  background-color: #66e0c2;
+  color: #f2f2f2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 23px;
+  border: none;
+  padding: 10px;
+  margin-left:7px;
+  transition: all 0.5s;
+  &:hover {
+    background-color:#00af83;
+  }
 };
+
+.form {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 23px;
+}
+.date-form {
+  .form-control {
+    width: 20px;
+    margin: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #E7E7E7;
+    border-radius: 20px;
+    padding: 10px;
+    width: 162px;
+    background-color: #fdfcfc;
+  }
+}
