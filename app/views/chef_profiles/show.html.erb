@@ -19,7 +19,7 @@
         <%= cl_image_tag @profile.photo.key, crop: :fill, style:"margin-top:0px" %>
       <% end %>
        <div class="text-box-price">
-          <strong><%= @profile.price %></strong><br> €/day
+          <strong><%= '%.2f' % @profile.price %></strong><br> €/day
         </div>
     </div>
     <div class="bottom-screen">

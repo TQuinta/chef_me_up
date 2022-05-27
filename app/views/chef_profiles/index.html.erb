@@ -30,7 +30,7 @@
               <h2><%= profile.title %></h2>
             </div>
             <div class="card-chef-pricing">
-              <p>$<strong><%= profile.price %></strong> per day</p>
+              <p>$<strong><%= '%.2f' % profile.price %></strong> per day</p>
             </div>
             <% user = User.find(profile.user_id)%>
             <% if user.avatar.attached? %>

@@ -31,7 +31,7 @@ chef = ChefProfile.new(
   description: "I prepare high quality and fresh packed meals for lunch and dinner for those that are on a busy schedule",
   category: "ChefToGo",
   user: user,
-  price: 19.9,
+  price: 19.923,
   meal_picture_url: "https://images.unsplash.com/photo-1543352632-fea6d4f83e78?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974"
 )
 
@@ -56,7 +56,7 @@ chef = ChefProfile.new(
                on entertaining your guests, I prepare the most exciting meals to match the mood",
   category: "ChefMyExperience",
   user: user,
-  price: 159.9,
+  price: 159.913,
   meal_picture_url: "https://images.unsplash.com/photo-1547573854-74d2a71d0826?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070"
 )
 
@@ -80,7 +80,7 @@ chef = ChefProfile.new(
   description: "You have a life, the last thing you want to worry about is shopping and cooking. I do it all, so you don't have to",
   category: "ChefMyHome",
   user: user,
-  price: 100,
+  price: 100.078,
   meal_picture_url: "https://d1zzxdyvtq79bu.cloudfront.net/uploads/images/landings/64/e4/private-chef-in-paterna.jpg"
 )
 
@@ -104,7 +104,7 @@ chef = ChefProfile.new(
   description: "Have you ever wanted a Michelin star chef experience, but cannot get onto the waiting lists. Look no further",
   category: "ChefMyHome",
   user: user,
-  price: 10,
+  price: 10.898,
   meal_picture_url: "https://images.unsplash.com/photo-1601063458289-77247ba485ec?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480"
 )
 
@@ -128,7 +128,7 @@ chef = ChefProfile.new(
   description: "I provide a show of sushi preparation. I provide all equipment and ingredients",
   category: "ChefMyExperience",
   user: user,
-  price: 200,
+  price: 200.182,
   meal_picture_url: "https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925"
 )
 
@@ -152,7 +152,7 @@ chef = ChefProfile.new(
   description: "Best bento boxes created freshly every day.",
   category: "ChefToGo",
   user: user,
-  price: 39.9,
+  price: 39.992,
   meal_picture_url: "https://images.unsplash.com/photo-1596463059283-da257325bab8?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070"
 )
 
@@ -176,7 +176,7 @@ chef = ChefProfile.new(
   description: "Sandwiches are the greatest invention since sliced bread. I provide a variety of sandwiches with only the cheapest ingredients",
   category: "ChefToGo",
   user: user,
-  price: 1,
+  price: 23.982,
   meal_picture_url: "https://cdn.cheapism.com/images/080316_cheap_easy_sandwich_recipe_ideas_slid.max-784x410_7DNkeyV.jpg"
 )
 
@@ -200,7 +200,7 @@ chef = ChefProfile.new(
   description: "I come and cook a full hog roast. That easy.",
   category: "ChefMyExperience",
   user: user,
-  price: 150,
+  price: 150.285,
   meal_picture_url: "https://greedylittlepig.co.uk/wp-content/uploads/2020/09/roast.jpg"
 )
 
@@ -224,7 +224,7 @@ chef = ChefProfile.new(
   description: "I am a fully trained chef who will prepare all the meals for you, when you want, as you want! Ingredients not included.",
   category: "ChefMyHome",
   user: user,
-  price: 300,
+  price: 300.564,
   meal_picture_url: "https://media.bizj.us/view/img/11179240/web-personal-chef-linh-casuccio-dm-4336-010319*1200xx4162-2343-0-104.jpg"
 )
 
