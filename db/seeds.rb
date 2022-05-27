@@ -53,7 +53,7 @@ puts "creating bookings"
   chef = ChefProfile.all.sample
   booking = Booking.new(
     date: DateTime.now,
-    duration: rand(1...20),
+    duration: DateTime.now + rand(1..5).days,
     status: %w[pending rejected confirmed].sample,
     user: user,
     chef_profile: chef

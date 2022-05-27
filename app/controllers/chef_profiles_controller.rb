@@ -15,7 +15,7 @@ class ChefProfilesController < ApplicationController
       @profiles = @profiles.select { |profile| profile.available?(start_date, end_date) }
 
     else
-
+      puts "No chefs on this date"
     end
   end
 
