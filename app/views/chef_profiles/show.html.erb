@@ -18,8 +18,19 @@
       <% else %>
         <%= cl_image_tag @profile.photo.key, crop: :fill, style:"margin-top:0px" %>
       <% end %>
+       <div class="text-box-price">
+          <strong><%= @profile.price %></strong><br> €/day
+        </div>
+    </div>
+    <div class="bottom-screen">
+      <div class="text-box">
+        <ul>
+          <li id="chef-title">Chef's description </li>
+            <li id="description"><%= @profile.description %></li>
+        </ul>
+      </div>
       <% unless @profile.user == current_user %>
-      <div class="col-4">
+      <div class="col-6">
         <div class="form-box">
           <div class="small-form">
           <h2>Make a new booking</h2>
@@ -31,18 +42,9 @@
             <% end %>
           </div>
         </div>
-        <div class="text-box-price">
-          <strong><%= @profile.price %></strong> €/day
-        </div>
       </div>
 
       <% end %>
-    </div>
-    <div class="text-box">
-      <ul>
-        <li id="chef-title">Chef's description </li>
-          <li><%= @profile.description %></li>
-      </ul>
     </div>
   </div>
 </div>

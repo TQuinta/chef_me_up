@@ -1,4 +1,7 @@
 
+.container {
+  max-width: 800px;
+}
 .profile-page {
   h1 {
     margin: 52px 0px 13px 0px;
@@ -16,12 +19,12 @@
     font-size: 20px;
   }
   img {
-    width:856px;
-    height: 481px;
+    width:100%;
     border-radius: 16px;
     margin: 26px 0px;
     box-shadow: 1px 1px 8px rgba($color: #000000, $alpha: 0.3);
     margin-right: 20px;
+    margin-bottom: 50px;
   }
 
   ul {
@@ -30,7 +33,8 @@
 }
 
 .flex {
-  display: flex;
+ position: relative;
+
 }
 #avatar {
   width: 60px;
@@ -51,4 +55,11 @@
 
 .mini-box {
   display:flex;
+}
+
+.bottom-screen {
+  display: flex;
+  box-sizing: unset;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
