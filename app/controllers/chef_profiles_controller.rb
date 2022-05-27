@@ -8,6 +8,15 @@ class ChefProfilesController < ApplicationController
     else
       @profiles = policy_scope(ChefProfile).order(created_at: :desc)
     end
+
+    if params[:date].present?
+      start_date = Date.new(params[:date].split.first.split("-")[0].to_i, params[:date].split.first.split("-")[1].to_i, params[:date].split.first.split("-")[2].to_i)
+      end_date = Date.new(params[:date].split.last.split("-")[0].to_i, params[:date].split.last.split("-")[1].to_i, params[:date].split.last.split("-")[2].to_i)
+      @profiles = @profiles.select { |profile| profile.available?(start_date, end_date) }
+
+    else
+      puts "No chefs on this date"
+    end
   end
 
   def show

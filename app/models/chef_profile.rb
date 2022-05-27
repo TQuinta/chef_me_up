@@ -1,5 +1,6 @@
 class ChefProfile < ApplicationRecord
   belongs_to :user
+  has_many :bookings
   has_one_attached :photo
   include PgSearch::Model
 
@@ -9,13 +10,7 @@ class ChefProfile < ApplicationRecord
     tsearch: { prefix: true }
   }
 
-  def message
-    if self.category == "ChefMyHome"
-      "Our chef will provide you with all you need, cooking you breakfast, lunch, and dinner at your house"
-    elsif self.category == "ChefToGo"
-      "Home cooked pre-prepared meals for those on the go!"
-    else
-      "Events, parties, or just because you want to. Our chefs will provide you with your perfect experience"
-    end
+  def available?(from, to)
+    bookings.where('date <= ? AND duration >= ?', to, from).none?
   end
 end
