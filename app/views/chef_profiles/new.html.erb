@@ -8,6 +8,6 @@
   <%= f.input :category %>
   <%= f.input :price, input_html: { min: '0', step: 'any' }, :hint => 'ex. 100, 70.50', :label => 'Price (in euros)' %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.submit "Submit", class: "btn btn-primary", id:"chef-up" %>
 <% end %>
 </div>
