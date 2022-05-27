@@ -22,9 +22,9 @@
                 <p>Status: <strong><%= booking.status.upcase %></strong></p>
                 <%= link_to "accept",  booking_accept_path(booking), method: :patch, id: "accept"%>
                 <%= link_to "reject",  booking_reject_path(booking), method: :patch, id: "reject" %>
-               <p>Booked for: <strong><%= booking.date %></strong></p>
-               <p>Days requested: <strong><%= booking.duration %></strong></p>
-              <p>Total price: <strong><%= booking.total_price %></strong></p>
+               <p>Start date: <strong><%= booking.date %></strong></p>
+               <p>End date: <strong><%= booking.duration %></strong></p>
+              <p>Total price: <strong><%= '%.2f' % booking.total_price %></strong></p>
              </div>
            </div>
          </div>
