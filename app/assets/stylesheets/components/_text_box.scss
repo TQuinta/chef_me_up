@@ -6,26 +6,37 @@
   // margin: 8px;
   border-bottom: 1px solid #8dd8c5;
   border-top: 1px solid #8dd8c5;
-  padding: 24px;
+  padding: 25px;
   padding-bottom: 10px;
-  margin-top: 14px;
   margin-bottom:20px;
   background-color: #fdfcfc;
+  height: min-content;
+  width: 55%;
 }
 
 .text-box-price {
-  background-color: white;
   border-radius: 16px;
-  padding: 24px;
+  padding: 10px;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
-  margin: 29px;
   font-size: 20px;
-  width: 153px;
+  width: 112px;
   text-align: center;
   margin-left: 25px;
-  background-color: #fdfcfc;
+  background-color: #62dcbe;
+  position: absolute;
+  bottom: 21px;
+  left: 5px;
+  color: #fdfcfc;
+
 }
 .text-box p {
   padding: 16px;
   margin: 0px;
+  text-align: justify;
+}
+ul {
+  padding-left: 0;
+}
+#description {
+  text-align: justify;
 }

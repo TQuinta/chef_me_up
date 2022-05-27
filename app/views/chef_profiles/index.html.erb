@@ -36,6 +36,9 @@
             <% else %>
               <%= image_tag "chefcolor.png",  class: "card-trip-user avatar-bordered" %>
             <% end %>
+            <div class="card-chef-category">
+              <p> <%= profile.category %> </p>
+            </div>
           </div>
           <%# <img src="https://avatars.githubusercontent.com/u/101748011?v=4" class="card-trip-user avatar-bordered" /> %>
         </div>
@@ -47,4 +50,21 @@
   <% end %>
 
 
+</div>
+
+<div class="container">
+  <div class="category-cards">
+    <div class="category-card">
+      <h2>ChefMyHome</h2>
+      <p>Our chef will provide you with all you need, cooking you breakfast, lunch, and dinner at your house</p>
+    </div>
+    <div class="category-card">
+      <h2>ChefMyExperience</h2>
+      <p>Events, parties, or just because you want to. Our chefs will provide you with your perfect experience</p>
+    </div>
+  </div>
+  <div class="category-card-last">
+    <h2>ChefToGo</h2>
+    <p>Home cooked pre-prepared meals for those on the go!</p>
+  </div>
 </div>
