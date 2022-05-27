@@ -1,30 +1,25 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8">
-      <div class="profile-page">
-        <h1>Chef <%= @profile.title %></h1>
-        <div class="category">
-          <p><%= @profile.category %> Cuisine</p>
-        </div>
-
-        <% if @profile.meal_picture_url %>
-          <%= image_tag @profile.meal_picture_url%>
-        <% else %>
-          <%= cl_image_tag @profile.photo.key, crop: :fill %>
-        <% end %>
-
-        <div class="text-box">
-          <ul>
-            <li><b>Description: </b><%= @profile.description %></li>
-            <li><b>Price per day: </b><%= @profile.price %> euros</li>
-          </ul>
-        </div>
-      </div>
+  <div class="profile-page">
+    <h1><%= @profile.title %></h1>
+    <div class="category">
+      <p><%= @profile.category %></p>
+      <% user =  User.find(@profile.user_id)%>
+       <% if  user.avatar_url %>
+        <%= image_tag user.avatar_url, crop: :fill, id:"avatar" %>
+       <% elsif  user.avatar.attached? %>
+        <%= cl_image_tag user.avatar.key, crop: :fill, id: "avatar" %>
+       <% else %>
+        <%= image_tag "chefcolor.png", id: "avatar" %>
+       <% end %>
     </div>
-  </div>
-  <% unless @profile.user == current_user %>
-    <div class="row justify-content-center">
-      <div class="col-sm-6">
+    <div class="flex">
+      <% if @profile.meal_picture_url %>
+        <%= image_tag @profile.meal_picture_url, style:"margin-top:0px"%>
+      <% else %>
+        <%= cl_image_tag @profile.photo.key, crop: :fill, style:"margin-top:0px" %>
+      <% end %>
+      <% unless @profile.user == current_user %>
+      <div class="col-4">
         <div class="form-box">
           <div class="small-form">
           <h2>Make a new booking</h2>
@@ -40,7 +35,18 @@
             <% end %>
           </div>
         </div>
+        <div class="text-box-price">
+          <strong><%= @profile.price %></strong> €/day
+        </div>
       </div>
+
+      <% end %>
     </div>
-  <% end %>
+    <div class="text-box">
+      <ul>
+        <li id="chef-title">Chef's description </li>
+          <li><%= @profile.description %></li>
+      </ul>
+    </div>
+  </div>
 </div>

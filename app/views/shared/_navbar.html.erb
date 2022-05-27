@@ -6,6 +6,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+<<<<<<< HEAD
 
   <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
 
@@ -19,27 +20,16 @@
 <% end %>
 </form>
 
-
-
-<!--THIS IS SEARCH BY DATE -->
-
-<div>
-  <%= form_tag chef_profiles_path, method: :get do %>
-    <%= text_field_tag :date,
-      params[:date],
-      class: "form-control",
-      id: "range_start",
-      placeholder: "Pick dates"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </form>
-</div>
-
-
-<!--END-->
-
-
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+      <%= form_tag chef_profiles_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control input-wide",
+          placeholder: "Find a chef"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </form>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <% if user_signed_in? %>
         <% if current_user.avatar.attached? %>

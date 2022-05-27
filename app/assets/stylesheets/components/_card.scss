@@ -1,0 +1,93 @@
+.card-chef {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  text-decoration: none;
+  color:black;
+  transition: all 0.2s;
+}
+
+.card-chef > img {
+  height: 195px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-chef h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+.card-chef p {
+  font-size: 15px;
+  margin: 0;
+  color: rgba($color: #000000, $alpha: 0.6);
+}
+
+.card-chef:hover {
+  text-decoration:  none;
+  color: #00cc99 !important;
+}
+
+.card-chef .card-chef-infos {
+  padding-left: 16px;
+  padding-bottom: 52px;
+  padding-top: 20px;
+  // display: flex;
+  display: block;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  position: relative;
+}
+
+.card-chef-infos .card-chef-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  transition: all 0.6s;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 34px;
+  align-items: center;
+  margin: 23px;
+}
+
+.card-chef-pricing {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+}
+
+// Smallest device
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// // Small devices (landscape phones, 576px and up)
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// // Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// // Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
